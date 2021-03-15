@@ -45,9 +45,11 @@
     "puppeteer": "8.0.0"
   },
   "scripts": {
-    "test": "npm run build && nyc mocha",
-    "build": "npm run clean-lib && tsc",
-    "clean-lib": "rimraf lib"
+    "pretest": "npm run build",
+    "test": "mocha",
+    "build": "npm run clean:lib && tsc",
+    "clean:lib": "rimraf lib",
+    "coverage": "nyc mocha"
   },
   "main": "./lib/product-scraper-core.js",
   "types": "./lib/product-scraper-core.d.ts"
