@@ -1,0 +1,4 @@
+lib/
+.eslintrc.js
+wallaby.conf.js
+README.md
