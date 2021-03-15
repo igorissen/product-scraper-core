@@ -38,6 +38,12 @@ describe('Scraper', () => {
       expect(scraper.browser).to.not.be.null;
       return;
     });
+
+    it('should raise an error when trying to initialize a new browser object', async () => {
+      return scraper.init().catch((err) => {
+        expect(err.message).to.equal('Private property _browser already instantiated');
+      });
+    });
   });
 
   describe('destroy', () => {
